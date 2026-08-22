@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boo Sort: Color Bottles Puzzle — Color Sorting & Liquid Logic</title>
-    <meta name="description" content="Challenge your brain with Boo Sort: Color Bottles Puzzle! Enjoy liquid sorting puzzles and brain teasers on iPhone & iPad.">
+    <title>Boo Sort: Color Bottles Puzzle — Water Pour & Brain Logic</title>
+    <meta name="description" content="Download Boo Sort: Color Bottles Puzzle on iOS. Sort vibrant colored liquids into matching glass bottles, train your brain, and enjoy 10,000+ levels with Boo the cute bunny!">
     
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Boo Sort: Color Bottles Puzzle">
-    <meta property="og:description" content="Color Sorting & Liquid Logic game for iOS. Sort colored water in bottles and test your problem-solving skills.">
-    <meta property="og:image" content="https://via.placeholder.com/400x400/8a2be2/ffffff?text=Boo+Sort">
+    <meta property="og:description" content="Water Pour & Brain Logic puzzle game for iOS & iPad. Sort colored water in bottles with Boo the cute bunny. Play 100% offline!">
+    <meta property="og:url" content="https://apps.apple.com/us/app/boo-sort-color-bottles-puzzle/id6801185201">
+    <meta property="og:image" content="https://via.placeholder.com/512x512/8a2be2/ffffff?text=Boo+Sort">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,14 +19,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Boo Sort: Color Bottles Puzzle",
+      "operatingSystem": "iOS 15.1 or later, iPadOS 15.1 or later, macOS 12.0 or later",
+      "applicationCategory": "GameApplication",
+      "gameItem": "Puzzle Game",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Evgenii Aleksanov"
+      },
+      "url": "https://apps.apple.com/us/app/boo-sort-color-bottles-puzzle/id6801185201"
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0d1117;
-            --card-bg: rgba(22, 27, 34, 0.8);
-            --card-border: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(22, 27, 34, 0.75);
+            --card-border: rgba(255, 255, 255, 0.12);
             --accent-purple: #8a2be2;
-            --accent-blue: #007aff;
-            --accent-gradient: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+            --accent-blue: #3b82f6;
+            --accent-pink: #ec4899;
+            --accent-gradient: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #ec4899 100%);
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
         }
@@ -43,8 +67,9 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+                radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 60%);
             background-attachment: fixed;
         }
 
@@ -71,13 +96,14 @@
             width: 140px;
             height: 140px;
             border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.3);
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(168, 85, 247, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             object-fit: cover;
         }
 
         .app-icon:hover {
-            transform: scale(1.03);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(168, 85, 247, 0.5);
         }
 
         .app-title {
@@ -92,21 +118,28 @@
         .app-subtitle {
             font-size: 1.25rem;
             color: var(--text-muted);
-            font-weight: 500;
+            font-weight: 600;
+            margin-top: 4px;
         }
 
-        .badge-coming-soon {
-            display: inline-block;
-            background: rgba(168, 85, 247, 0.2);
-            color: #a855f7;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            padding: 4px 14px;
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 8px;
+            font-weight: 700;
+            margin-top: 10px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
+        }
+
+        .badge-live i {
+            font-size: 0.7rem;
         }
 
         /* Stats Bar */
@@ -114,22 +147,23 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 16px;
-            margin: 30px 0;
+            margin: 32px 0;
             width: 100%;
-            max-width: 700px;
+            max-width: 760px;
         }
 
         .stat-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             padding: 16px;
-            border-radius: 16px;
+            border-radius: 18px;
             text-align: center;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .stat-card i {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: #a855f7;
             margin-bottom: 6px;
         }
@@ -140,10 +174,11 @@
         }
 
         .stat-label {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-top: 2px;
         }
 
         /* App Store Download Button */
@@ -153,24 +188,43 @@
             gap: 14px;
             background: #ffffff;
             color: #000000;
-            padding: 14px 32px;
+            padding: 16px 36px;
             border-radius: 40px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+            font-size: 1.15rem;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
             transition: all 0.3s ease;
             margin-top: 10px;
         }
 
         .cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
-            background: #f0f0f0;
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.28);
+            background: #f8fafc;
         }
 
         .cta-btn i {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
+        }
+
+        /* Description Section */
+        .description-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 32px;
+            margin: 40px 0;
+            backdrop-filter: blur(12px);
+            line-height: 1.7;
+        }
+
+        .description-box h2 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* Screenshots Showcase */
@@ -185,7 +239,7 @@
             display: flex;
             gap: 20px;
             overflow-x: auto;
-            padding: 20px 10px;
+            padding: 10px 5px 25px;
             scroll-snap-type: x mandatory;
             scrollbar-width: thin;
             scrollbar-color: var(--accent-purple) transparent;
@@ -203,16 +257,17 @@
         .screenshot-item {
             flex: 0 0 auto;
             width: 260px;
-            border-radius: 20px;
+            border-radius: 22px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.5);
             border: 1px solid var(--card-border);
             scroll-snap-align: center;
             transition: transform 0.3s ease;
+            background: #161b22;
         }
 
         .screenshot-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
         }
 
         .screenshot-item img {
@@ -234,25 +289,26 @@
             border: 1px solid var(--card-border);
             padding: 28px;
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: border-color 0.3s ease;
+            backdrop-filter: blur(12px);
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
         .feature-card:hover {
-            border-color: rgba(168, 85, 247, 0.4);
+            border-color: rgba(168, 85, 247, 0.45);
+            transform: translateY(-4px);
         }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(168, 85, 247, 0.1);
-            border-radius: 12px;
+            width: 50px;
+            height: 50px;
+            background: rgba(168, 85, 247, 0.12);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
             color: #a855f7;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .feature-card h3 {
@@ -272,21 +328,22 @@
             border: 1px solid var(--card-border);
             border-radius: 24px;
             padding: 36px;
+            backdrop-filter: blur(12px);
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 24px;
             margin-top: 20px;
         }
 
         .info-item h4 {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
+            letter-spacing: 0.6px;
+            margin-bottom: 6px;
         }
 
         .info-item p {
@@ -307,18 +364,23 @@
             color: var(--text-main);
             text-decoration: none;
             margin: 0 10px;
+            transition: color 0.2s ease;
         }
 
         footer a:hover {
+            color: #a855f7;
             text-decoration: underline;
         }
 
         @media (max-width: 600px) {
             .app-title {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
             .screenshot-item {
-                width: 200px;
+                width: 210px;
+            }
+            .description-box, .app-info-section {
+                padding: 24px;
             }
         }
     </style>
@@ -329,85 +391,119 @@
         <!-- Hero Section -->
         <header>
             <div class="app-header-content">
+                <!-- Replace src with your App Icon URL from iTunes / App Store if available -->
                 <img src="https://via.placeholder.com/400x400/8a2be2/ffffff?text=Boo+Sort" alt="Boo Sort: Color Bottles Puzzle Icon" class="app-icon">
                 
                 <div>
                     <h1 class="app-title">Boo Sort: Color Bottles Puzzle</h1>
-                    <p class="app-subtitle">Color Sorting & Liquid Logic</p>
-                    <div class="badge-coming-soon">Coming Soon</div>
+                    <p class="app-subtitle">Water Pour & Brain Logic</p>
+                    <div class="badge-live">
+                        <i class="fa-solid fa-circle"></i> Available Free on App Store
+                    </div>
                 </div>
 
                 <!-- Stats Bar -->
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <i class="fa-solid fa-trophy"></i>
+                        <i class="fa-solid fa-tag"></i>
                         <div class="stat-value">Free</div>
                         <div class="stat-label">Price</div>
                     </div>
                     <div class="stat-card">
-                        <i class="fa-solid fa-child-reaching"></i>
+                        <i class="fa-solid fa-shield-halved"></i>
                         <div class="stat-value">4+</div>
                         <div class="stat-label">Age Rating</div>
                     </div>
                     <div class="stat-card">
-                        <i class="fa-solid fa-tablet-screen-button"></i>
-                        <div class="stat-value">iOS / iPadOS</div>
+                        <i class="fa-solid fa-layer-group"></i>
+                        <div class="stat-value">10,000+</div>
+                        <div class="stat-label">Levels</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <div class="stat-value">iOS 15.1+</div>
                         <div class="stat-label">Platform</div>
                     </div>
                     <div class="stat-card">
                         <i class="fa-solid fa-language"></i>
-                        <div class="stat-value">English</div>
-                        <div class="stat-label">Language</div>
+                        <div class="stat-value">EN, RU, ES</div>
+                        <div class="stat-label">Languages</div>
                     </div>
                 </div>
 
-                <a href="https://apps.apple.com/app/id6801185201" class="cta-btn" target="_blank" rel="noopener">
+                <a href="https://apps.apple.com/us/app/boo-sort-color-bottles-puzzle/id6801185201" class="cta-btn" target="_blank" rel="noopener">
                     <i class="fa-brands fa-apple"></i>
-                    <span>View on App Store</span>
+                    <span>Download on App Store</span>
                 </a>
             </div>
         </header>
+
+        <!-- Game Overview -->
+        <section class="description-box">
+            <h2>About the Game</h2>
+            <p>
+                <strong>Boo Sort: Color Bottles Puzzle</strong> is a fun, addictive, and relaxing liquid sorting game designed to challenge your brain and help you unwind. Join <strong>Boo</strong>, the cute bunny companion, on an epic color-matching adventure!
+            </p>
+            <p style="margin-top: 12px;">
+                Sort vibrant colored liquids into matching glass tubes, solve clever logic puzzles, and enjoy thousands of satisfying levels at your own pace without pressure.
+            </p>
+        </section>
 
         <!-- Screenshots Showcase -->
         <section>
             <h2 class="section-title">Game Screenshots</h2>
             <div class="screenshots-container">
                 <div class="screenshot-item">
-                    <img src="https://via.placeholder.com/460x998/161b22/a855f7?text=Screenshot+1" alt="Boo Sort Screenshot 1">
+                    <img src="https://via.placeholder.com/460x998/161b22/a855f7?text=Liquid+Sorting+Gameplay" alt="Boo Sort Liquid Sorting Gameplay">
                 </div>
                 <div class="screenshot-item">
-                    <img src="https://via.placeholder.com/460x998/161b22/3b82f6?text=Screenshot+2" alt="Boo Sort Screenshot 2">
+                    <img src="https://via.placeholder.com/460x998/161b22/3b82f6?text=Meet+Boo+the+Bunny" alt="Meet Boo the Bunny Companion">
                 </div>
                 <div class="screenshot-item">
-                    <img src="https://via.placeholder.com/460x998/161b22/a855f7?text=Screenshot+3" alt="Boo Sort Screenshot 3">
+                    <img src="https://via.placeholder.com/460x998/161b22/ec4899?text=10000%2B+Logic+Levels" alt="Over 10,000 Logic Levels">
                 </div>
                 <div class="screenshot-item">
-                    <img src="https://via.placeholder.com/460x998/161b22/3b82f6?text=Screenshot+4" alt="Boo Sort Screenshot 4">
+                    <img src="https://via.placeholder.com/460x998/161b22/3b82f6?text=Use+Extra+Tube+Boosters" alt="Free Bottle Boosters">
                 </div>
                 <div class="screenshot-item">
-                    <img src="https://via.placeholder.com/460x998/161b22/a855f7?text=Screenshot+5" alt="Boo Sort Screenshot 5">
+                    <img src="https://via.placeholder.com/460x998/161b22/a855f7?text=Relaxing+Brain+Training" alt="Relaxing Brain Training">
                 </div>
             </div>
         </section>
 
         <!-- Key Features -->
         <section>
-            <h2 class="section-title">Why You'll Love It</h2>
+            <h2 class="section-title">Game Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-flask"></i></div>
-                    <h3>Color Sorting Fun</h3>
-                    <p>Pour and sort colored water in glass bottles until each bottle contains only one single color.</p>
+                    <div class="feature-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <h3>10,000+ Unique Levels</h3>
+                    <p>Enjoy thousands of levels with smooth progressive difficulty, from light casual sorting to deep brain teasers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-wifi-slash"></i></div>
+                    <h3>100% Offline Gameplay</h3>
+                    <p>Play anywhere without Wi-Fi or mobile data required. Perfect for commutes, flights, or relaxing at home.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-paw"></i></div>
+                    <h3>Meet Boo the Bunny</h3>
+                    <p>An adorable bunny companion accompanies you throughout your liquid logic puzzle journey.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>Brain Training</h3>
-                    <p>Sharpen your logic and spatial thinking with thousands of relaxing yet challenging liquid puzzles.</p>
+                    <h3>Effective Brain Training</h3>
+                    <p>Sharpen your logic, spatial thinking, and focus while experiencing a deeply satisfying stress-relief activity.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-wifi"></i></div>
-                    <h3>Play Offline</h3>
-                    <p>Enjoy smooth gameplay anytime, anywhere — no active internet connection required to solve levels.</p>
+                    <div class="feature-icon"><i class="fa-solid fa-spa"></i></div>
+                    <h3>Relaxed Gameplay</h3>
+                    <p>No penalty pressure — enjoy pure relaxed logic puzzle solving at your own comfortable pace.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-flask"></i></div>
+                    <h3>Free Bottle Boosters</h3>
+                    <p>Stuck on a tricky level? Claim free extra bottle slots whenever you need a boost to solve the liquid logic.</p>
                 </div>
             </div>
         </section>
@@ -426,11 +522,19 @@
                 </div>
                 <div class="info-item">
                     <h4>Size</h4>
-                    <p>~50 MB</p>
+                    <p>78.8 MB</p>
                 </div>
                 <div class="info-item">
                     <h4>Compatibility</h4>
-                    <p>Requires iOS 12.0 or later</p>
+                    <p>iOS 15.1 or later (iPhone, iPad, Mac M1+, Vision Pro)</p>
+                </div>
+                <div class="info-item">
+                    <h4>Languages</h4>
+                    <p>English, Russian, Spanish</p>
+                </div>
+                <div class="info-item">
+                    <h4>In-App Ads</h4>
+                    <p>Contains Advertising</p>
                 </div>
             </div>
         </section>
@@ -439,9 +543,9 @@
         <footer>
             <p>&copy; Evgenii Aleksanov. All rights reserved.</p>
             <p style="margin-top: 12px;">
-                <a href="https://apps.apple.com/app/id6801185201" target="_blank">View in App Store</a> |
-                <a href="https://jenyaalexanov.github.io/boo-sort-color-bottles-puzzle/privacy-policy.html">Privacy Policy</a> |
-                <a href="https://jenyaalexanov.github.io/boo-sort-color-bottles-puzzle/terms-of-service.html">Terms of Service</a>
+                <a href="https://apps.apple.com/us/app/boo-sort-color-bottles-puzzle/id6801185201" target="_blank" rel="noopener">View on App Store</a> |
+                <a href="https://jenyaalexanov.github.io/boo-sort-color-bottles-puzzle/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> |
+                <a href="https://jenyaalexanov.github.io/boo-sort-color-bottles-puzzle/terms-of-service.html" target="_blank" rel="noopener">Terms of Service</a>
             </p>
         </footer>
     </div>
